@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <title>Weather App</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        
+        
+        <div class="card">
+            <div class="search">
+                <input type="text" placeholder="Enter city name"
+                spellcheck="false">
+                <button><img src="imgs/search.png"></button>
+            </div>
+            <div class="weather">
+                <img src="imgs/heavy-rain.png"  class="weather-icon">
+                <h1 class="temp">22°c </h1>
+                <h2 class="city">New York</h2>
+                <div class="details">
+                    <div class="col">
+                        <img src="imgs/humidity.png">
+                        <div>
+                            <p class="humidity">50%</p>
+                            <p>humidity</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <img src="imgs/wind.png">
+                        <div>
+                            <p class="wind">15 km/h</p>
+                            <p>Wind Speed</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>  
+        
+        <script>
+            const apiKey = 'fa4b4ccb631c50da6558d3b7f6d1901a'; // Replace with your actual API key
+            const cityName = 'https://api.openweathermap.org/data/2.5/weather?units=metric&q=bagalore"'; // Replace with the city you want to fetch weather data for
+
+            fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}`)
+            .then(response => response.json())
+            .then(data => {
+              // Process the weather data here
+            })
+            .catch(error => {
+             console.error('Error:', error);
+             });
+            // const apiKey ="fa4b4ccb631c50da6558d3b7f6d1901a";
+            // const apiUrl="https://api.openweathermap.org/data/2.5/weather?units=metric&q=bagalore";
+
+            // async function checkWeather(){
+            //     const response = await fetch(apiUrl + `&appid=${apiKey}`);
+            //     var data = await response.json();
+
+            //     console.log(data);
+            // }
+            // checkWeather();
+        </script>
+    </body>
+</html>
